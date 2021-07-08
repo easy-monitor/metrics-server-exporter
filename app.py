@@ -157,6 +157,6 @@ if __name__ == '__main__':
         raise Exception(u"--svc_token is empty")
 
     REGISTRY.register(MetricsServerExporter(options.ca_cert, options.api_url, options.svc_token))
-    start_http_server(8000)
+    start_http_server({{int "port"}})
     while True:
         time.sleep(5)
