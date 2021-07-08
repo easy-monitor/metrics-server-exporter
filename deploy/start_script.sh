@@ -3,13 +3,13 @@
 # Date    : 2016.03.28
 # Func    : 启动脚本
 # Note    : 注意：当前路径为应用部署文件夹
-# cd /usr/local/metrics-server-exporter && /usr/local/python3/python app.py --ca_cert=/usr/local/metrics-server-exporter/210_config/ca.crt --api_url="https://192.168.100.210:6443" --svc_token=/usr/local/metrics-server-exporter/210_config/token
+# cd /usr/local/metrics-server-exporter && /usr/local/python3/python metrics-server-exporter --ca_cert=/usr/local/metrics-server-exporter/210_config/ca.crt --api_url="https://192.168.100.210:6443" --svc_token=/usr/local/metrics-server-exporter/210_config/token
 #############################################################
 # 初始化环境
 
 # 用户自定义
 app_folder="metrics-server-exporter"                 # 项目根目录
-
+process_name="metrics-server-exporter"
 install_base="/data/exporter"          # 安装根目录
 
 #############################################################
@@ -31,7 +31,7 @@ api_url={{string "api_url"}}
 svc_token={{string "svc_token"}}
 # 需要用户提供 python3路径 连接apiserver认证证书，apiurl以及token文件
 # 启动命令
-start_cmd="${python3_path} app.py ---ca_cert=${ca_cert} --api_url=${api_url} --svc_token=${svc_token} >/dev/null 2>log/${app_folder}.log &"
+start_cmd="${python3_path} metrics-server-exporter --ca_cert=${ca_cert} --api_url=${api_url} --svc_token=${svc_token} >/dev/null 2>log/${app_folder}.log &"
 
 
 # 日志目录
