@@ -108,5 +108,5 @@ uninstall_prescript: ""
 uninstall_postscript: ""
 templates:
 - /deploy/start_script.sh
-- /app.py
+- /metrics-server-exporter
 ...
