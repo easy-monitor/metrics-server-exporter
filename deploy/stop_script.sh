@@ -6,12 +6,8 @@
 
 #############################################################
 # 用户自定义
-process_name="metrics-server-exporter"       # 进程名
-
 
 # 停止进程
-if [[ "${process_name}x" != "x" ]]; then
-    killall ${process_name}
-fi
+kill $(ps aux |grep 'python metrics-server-exporter'|awk '{print $2}')
 
 exit 0
