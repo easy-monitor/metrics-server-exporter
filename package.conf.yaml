@@ -42,7 +42,7 @@ start_script: |-
   svc_token={{string "svc_token"}}
   # 需要用户提供 python3路径 连接apiserver认证证书，apiurl以及token文件
   # 启动命令
-  start_cmd="${python3_path} metrics-server-exporter --ca_cert=${ca_cert} --api_url=${api_url} --svc_token=${svc_token} >/dev/null 2>log/${app_folder}.log &"
+  start_cmd="'${python3_path}' metrics-server-exporter --ca_cert='${ca_cert}' --api_url='${api_url}' --svc_token='${svc_token}' >/dev/null 2>log/${app_folder}.log &"
 
 
   # 日志目录
